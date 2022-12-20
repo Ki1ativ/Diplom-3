@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 public class ClickConstructorFromPersonalAccountTest extends BrowserSettings{
     @Before //регистрация пользователя
     public void registrationUser() {
-        user = user.getRandomUser();                                        //создать пользователя
+        user = User.getRandomUser();                                        //создать пользователя
         mainPage.openPage();                                                //открыть главную страницу
         mainPage.clickPersonalAccountButton();                              //вход в "Личный кабинет"
         authorizationPage.clickRegistrationButton();                        //переход по ссылке "Зарегистрироваться"

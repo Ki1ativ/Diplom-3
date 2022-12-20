@@ -7,7 +7,7 @@ public class ClickPersonalAccountTest extends BrowserSettings{
     @Test
     @DisplayName("Успешный переход в Личный кабинет с Главной страницы для авторизованного пользователя")
     public void successfulGoPersonalAccountOnMainPageAuthorizedUserTest() {
-        user = user.getRandomUser();                                    //создать пользователя
+        user = User.getRandomUser();                                    //создать пользователя
         mainPage.openPage();                                            //открыть главную страницу
         mainPage.clickPersonalAccountButton();                          //вход в "Личный кабинет"
         authorizationPage.clickRegistrationButton();                    //переход по ссылке "Зарегистрироваться"
@@ -22,7 +22,7 @@ public class ClickPersonalAccountTest extends BrowserSettings{
     @Test
     @DisplayName("Успешный переход в Личный кабинет со страницы Лента Заказов для авторизованного пользователя")
     public void successfulGoPersonalAccountOnFeedOrderPageAuthorizedUserTest() {
-        user = user.getRandomUser();                                    //создать пользователя
+        user = User.getRandomUser();                                    //создать пользователя
         mainPage.openPage();                                            //открыть главную страницу
         mainPage.clickPersonalAccountButton();                          //вход в "Личный кабинет"
         authorizationPage.clickRegistrationButton();                    //переход по ссылке "Зарегистрироваться"

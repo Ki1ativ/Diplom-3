@@ -7,7 +7,7 @@ public class RegistrationPageTest extends BrowserSettings {
     @Test
     @DisplayName("Тест успешной регистрации пользователя")
     public void successfulUserRegistrationTest() {
-        user = user.getRandomUser();                                //создать пользователя
+        user = User.getRandomUser();                                //создать пользователя
         mainPage.openPage();                                        //открыть главную страницу
         mainPage.clickPersonalAccountButton();                      //вход в "Личный кабинет"
         authorizationPage.clickRegistrationButton();                //переход по ссылке "Зарегистрироваться"
@@ -23,7 +23,7 @@ public class RegistrationPageTest extends BrowserSettings {
     @Test
     @DisplayName("Ошибка для некорректного пароля. Минимальный пароль — шесть символов.")
     public void nonSuccessfulUserRegistrationTest() {
-        user = user.getRandomUserWithNonCorrectPassword();          //создать пользователя
+        user = User.getRandomUserWithNonCorrectPassword();          //создать пользователя
         mainPage.openPage();                                        //открыть главную страницу
         mainPage.clickPersonalAccountButton();                      //вход в "Личный кабинет"
         authorizationPage.clickRegistrationButton();                //переход по ссылке "Зарегистрироваться"

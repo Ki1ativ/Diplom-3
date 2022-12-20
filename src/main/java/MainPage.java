@@ -26,7 +26,13 @@ public class MainPage {
     private final By saucesTitle  = By.xpath(".//h2[@class='text text_type_main-medium mb-6 mt-10'][2]"); //заголовок "Соусы"
     private final By ingredientsTitle  = By.xpath(".//h2[@class='text text_type_main-medium mb-6 mt-10'][3]"); //заголовок "Начинки"
     private final By orderButton = By.xpath(".//div[@class='BurgerConstructor_basket__container__2fUl3 mt-10']/button");//кнопка "Оформить заказ"
-
+    private final By windowDetailIngredients  = By.xpath(".//h2[@class='Modal_modal__title_modified__3Hjkd Modal_modal__title__2L34m text text_type_main-large pl-10' and text()='Детали ингредиента']"); //Окно и надпись "Детали ингредиента"
+    private final By craterBurger = By.xpath(".//p[@class = 'BurgerIngredient_ingredient__text__yp3dH' and text()='Краторная булка N-200i']/..");//выбрать "Краторный бургер"
+    private final By textWindowCraterBurger = By.xpath(".//p[@class = 'text text_type_main-medium mb-8' and text()='Краторная булка N-200i']/..");//Текст в окне "Краторный бургер"
+    private final By sauceTradition = By.xpath(".//p[@class = 'BurgerIngredient_ingredient__text__yp3dH' and text()='Соус традиционный галактический']/..");//выбрать "Соус традиционный галактический"
+    private final By textWindowSauceTradition = By.xpath(".//p[@class = 'text text_type_main-medium mb-8' and text()='Соус традиционный галактический']/..");//Текст в окне "Соус традиционный галактический"
+    private final By ingredientsBeef = By.xpath(".//p[@class = 'BurgerIngredient_ingredient__text__yp3dH' and text()='Говяжий метеорит (отбивная)']/..");//выбрать "Говяжий метеорит (отбивная)"
+    private final By textWindowIngredientsBeef = By.xpath(".//p[@class = 'text text_type_main-medium mb-8' and text()='Говяжий метеорит (отбивная)']/..");//Текст в окне "Говяжий метеорит (отбивная)"
 
     //открытие страницы тестирования
     public void openPage() {
@@ -103,6 +109,45 @@ public class MainPage {
         wait(orderButton);
         String text = driver.findElement(orderButton).getText();
         return (text.equals("Оформить заказ"));
+    }
+
+    //Получение текста "Детали ингредиента"
+    public String getWindowDetailIngredients() {
+        String detail = driver.findElement(windowDetailIngredients).getText();
+        return detail;
+    }
+
+    //нажать на Краторный бургер
+    public void clickCraterBurger(){
+        driver.findElement(craterBurger).click();
+    }
+
+    //Получение текста в окне "Краторный бургер"
+    public String getTextWindowCraterBurger() {
+        String burger = driver.findElement(textWindowCraterBurger).getText();
+        return burger;
+    }
+
+    //нажать на соус "Соус традиционный галактический"
+    public void clickSauceTradition(){
+        driver.findElement(sauceTradition).click();
+    }
+
+    //Получение текста в окне "Соус традиционный галактический"
+    public String getTextWindowSauceTradition() {
+        String burger = driver.findElement(textWindowSauceTradition).getText();
+        return burger;
+    }
+
+    //нажать на начинку "Говяжий метеорит (отбивная)"
+    public void clickIngredientsBeef(){
+        driver.findElement(ingredientsBeef).click();
+    }
+
+    //Получение текста в окне "Говяжий метеорит (отбивная)"
+    public String getTextWindowIngredientsBeef() {
+        String burger = driver.findElement(textWindowIngredientsBeef).getText();
+        return burger;
     }
 
 }

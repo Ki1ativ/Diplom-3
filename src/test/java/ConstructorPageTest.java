@@ -10,7 +10,19 @@ public class ConstructorPageTest extends BrowserSettings{
         mainPage.openPage();                                //открыть главную страницу
         mainPage.clickIngredientsButton();                  //переход к разделу "Начинки"
         mainPage.clickBunsButton();                         //переход к разделу "Булки"
-        assertEquals("Булки", mainPage.getBunsTitle());
+        mainPage.clickCraterBurger();                       //выбрать "Краторный бургер"
+        //assertEquals("Булки", mainPage.getBunsTitle());
+        assertEquals("Детали ингредиента", mainPage.getWindowDetailIngredients());
+        assertEquals("Детали ингредиента\n" +
+                "Краторная булка N-200i\n" +
+                "Калории,ккал\n" +
+                "420\n" +
+                "Белки, г\n" +
+                "53\n" +
+                "Жиры, г\n" +
+                "24\n" +
+                "Углеводы, г\n" +
+                "80", mainPage.getTextWindowCraterBurger());
     }
 
     @Test
@@ -18,7 +30,18 @@ public class ConstructorPageTest extends BrowserSettings{
     public void successfulTransitionToTheIngredientsSectionConstructorTestOK() {
         mainPage.openPage();                                //открыть главную страницу
         mainPage.clickIngredientsButton();                  //переход к разделу "Начинки"
-        assertEquals("Начинки", mainPage.getIngredientsTitle());
+        mainPage.clickIngredientsBeef();                    //выбрать "Говяжий метеорит (отбивная)"
+        assertEquals("Детали ингредиента", mainPage.getWindowDetailIngredients());
+        assertEquals("Детали ингредиента\n" +
+                "Говяжий метеорит (отбивная)\n" +
+                "Калории,ккал\n" +
+                "2674\n" +
+                "Белки, г\n" +
+                "300\n" +
+                "Жиры, г\n" +
+                "800\n" +
+                "Углеводы, г\n" +
+                "800", mainPage.getTextWindowIngredientsBeef());
     }
 
     @Test
@@ -26,6 +49,17 @@ public class ConstructorPageTest extends BrowserSettings{
     public void successfulTransitionToTheSaucesSectionConstructorTestOK() {
         mainPage.openPage();                                //открыть главную страницу
         mainPage.clickSaucesButton();                       //переход к разделу "Соусы"
-        assertEquals("Соусы", mainPage.getSaucesTitle());
+        mainPage.clickSauceTradition();                     //выбрать "Соус традиционный галактический"
+        assertEquals("Детали ингредиента", mainPage.getWindowDetailIngredients());
+        assertEquals("Детали ингредиента\n" +
+                "Соус традиционный галактический\n" +
+                "Калории,ккал\n" +
+                "99\n" +
+                "Белки, г\n" +
+                "42\n" +
+                "Жиры, г\n" +
+                "24\n" +
+                "Углеводы, г\n" +
+                "42", mainPage.getTextWindowSauceTradition());
     }
 }
